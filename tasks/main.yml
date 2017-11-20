@@ -1,0 +1,17 @@
+---
+- name: download keycloak .tgz
+  become: yes
+  become_user: root
+  get_url:
+    url: '{{keycloak_download_url}}'
+    dest: /tmp/{{ keycloak_file_name }}
+    mode: 0644
+
+- name: unarchive keycloak .tgz
+  become: yes
+  become_user: root
+  unarchive:
+    remote_src: yes
+    src: /tmp/{{ keycloak_file_name }}
+    dest: '{{keycloak_home}}'
+    creates: '{{keycloak_home}}'

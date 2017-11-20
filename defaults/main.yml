@@ -1,0 +1,6 @@
+---
+keycloak_version: '3.4.0.Final'
+keycloak_main_directory: /opt/keycloak
+keycloak_file_name: keycloak-{{ keycloak_version }}.tar.gz
+keycloak_home: {{ keycloak_main_directory }}/{{ keycloak_version }}
+keycloak_download_url: https://downloads.jboss.org/keycloak/{{ keycloak_version }}/keycloak-{{ keycloak_version }}.tar.gz
